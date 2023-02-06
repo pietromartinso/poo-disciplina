@@ -20,9 +20,11 @@ void Disciplina::setCargaHoraria(unsigned int novaCarga){
 	cargaHoraria = novaCarga;
 }
 
-Pessoa Disciplina::getProfessor() {
+Pessoa* Disciplina::getProfessor() {
 	return professor;
 }
-void Disciplina::setProfessor(Pessoa prof) {
+
+void Disciplina::setProfessor(
+	Pessoa* prof) {
 	professor = prof;
 }

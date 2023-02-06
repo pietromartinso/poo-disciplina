@@ -15,14 +15,13 @@ class Disciplina{
 		int getCargaHoraria();
 		void setCargaHoraria(unsigned int novaCarga);
 
-		Pessoa getProfessor();
-		void setProfessor(Pessoa prof);
-
-		
+		Pessoa* getProfessor();
+		void setProfessor(Pessoa* prof);
+	
 	private:
 		std::string nome;
 		unsigned short int cargaHoraria;
 
-		Pessoa professor;
+		Pessoa *professor;
 };
 #endif
