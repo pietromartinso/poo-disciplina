@@ -2,6 +2,8 @@
 #define DISCIPLINA_H
 
 #include <string>
+#include "Pessoa.hpp"
+
 
 class Disciplina{
 	public:
@@ -12,9 +14,15 @@ class Disciplina{
 		
 		int getCargaHoraria();
 		void setCargaHoraria(unsigned int novaCarga);
+
+		Pessoa getProfessor();
+		void setProfessor(Pessoa prof);
+
 		
 	private:
 		std::string nome;
 		unsigned short int cargaHoraria;
+
+		Pessoa professor;
 };
 #endif
