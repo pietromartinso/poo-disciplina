@@ -25,9 +25,9 @@ unsigned long Pessoa::getCpf(){
 	return cpf;
 }
 
-bool Pessoa::setCpf(unsigned long novoCpf){
-	if(validarCPF(novoCpf)){
-		cpf = novoCpf;
+bool Pessoa::setCpf(unsigned long cpf){
+	if(validarCPF(cpf)){
+		this->cpf = cpf;
 		return true;
 	}
 	return false;

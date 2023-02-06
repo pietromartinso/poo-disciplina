@@ -1,27 +1,17 @@
 #include<iostream>
-
-#include<string>
-
+#include<list>
 #include "Pessoa.hpp"
-#include "Disciplina.hpp"
 
-int main(){
-
-	int** mat = new int*[10];
-
-	int k = 1;
-
-	for (int i = 0; i < 10; i++) {
-		mat[i] = new int[10];
-		for (int j = 0; j < 10; j++) {
-			mat[i][j] = k;
-			k++;
-			std::cout << mat[i][j] << "\t";
-		}
-		std::cout << std::endl;
+int main() {
+	std::list<Pessoa*> pessoas;
+	pessoas.push_back(new Pessoa{ "Joao", 15 });//adicionando no final da lista
+	pessoas.push_back(new Pessoa{ "Maria", 16 });//adicionando no final da lista
+	Pessoa* p3{ new Pessoa{"Pedro", 20} };
+	pessoas.push_front(p3);//adicionando no início da lista
+	std::list<Pessoa*>::iterator it{ pessoas.begin() };
+	for (; it != pessoas.end(); it++) {//a lista contém ponteiros para pessoas, e não pessoas
+		std::cout << (*it)->getNome() << std::endl;//o itPes é um “ponteiro” que aponta para um ponteiro de pessoa!
+		delete* it;//não esqueça de deletar os ponteiros para desalocar a memória
 	}
-
-	delete[] mat;
 	return 0;
-
 }

@@ -17,6 +17,8 @@ class Disciplina{
 
 		Pessoa* getProfessor();
 		void setProfessor(Pessoa* prof);
+
+		void imprimirDados(std::string& cabecalho, unsigned int cargaTotalCurso);
 	
 	private:
 		std::string nome;

@@ -11,7 +11,7 @@ class Pessoa{
 		Pessoa(std::string nomePessoa, unsigned long cpfPessoa, unsigned short int idadePessoa);
 
 		unsigned long getCpf();
-		bool setCpf(unsigned long novoCpf);
+		bool setCpf(unsigned long cpf);
 
 		std::string getNome();
 		void setNome(std::string novoNome);
