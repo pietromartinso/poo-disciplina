@@ -6,18 +6,21 @@
 #include "Disciplina.hpp"
 
 int main(){
-	Pessoa p1{"Joao", static_cast<unsigned long>(11111111111), 20};
-	
-	Disciplina d1{ "Orientacao a Objetos" };
-	d1.setProfessor(&p1);
+	Pessoa* ptr1{ new Pessoa };//Utilizando construtor default
+	Pessoa* ptr2{ new Pessoa{"Joana", 22} };//Utilizando construtor com parâmetros
 
-	p1.setNome("Joao Silva");
+	int* ptrInt{ new int };//inteiro alocado e com lixo de memória
+	int* ptrIntIniciado{ new int{2} };//inteiro alocado e inicializado com 2
 
-	std::cout << p1.getNome() << '\t' << p1.getIdade() << '\t' << p1.getCpf() << std::endl;
+	ptr1->setNome("Maria");//operador -> para derreferenciar a função de objeto apontado
+	*ptrInt = 20;//mesma coisa que com C
 
-	std::cout << d1.getNome() << std::endl;
-	std::cout << d1.getProfessor()->getNome() << std::endl;
+	std::cout << ptr1->getNome() << std::endl;
+	std::cout << ptr2->getNome() << std::endl;
+	std::cout << *ptrInt << std::endl;
+	std::cout << *ptrIntIniciado << std::endl;
 	return 0;
+
 
 
 	return 0;
